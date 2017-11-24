@@ -1,6 +1,5 @@
 function [  ] = comp_fft( s )
-%COMP_FFT Summary of this function goes here
-%   Detailed explanation goes here
+%COMP_FFT compares fft and dft of a given signal all in one figure.
 
 figure('NumberTitle', 'off', 'Name', 'DFT vs FFT')
 subplot(4,1,1); stem(fftshift(real(dft(s)))); title('Real');

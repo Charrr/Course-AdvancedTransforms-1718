@@ -1,5 +1,6 @@
 function [  ] = complexity( size )
-%COMPLEXITY compares the complexity of DFT and FFT by plotting the comsumed time with respect to different sizes of ones(1,n) for both DFT and FFT on
+%COMPLEXITY compares the complexity of DFT and FFT by plotting the comsumed 
+%time with respect to different sizes of ones(1,n) for both DFT and FFT on
 %the same graph.
 %   size is an array of the signal length, i.e., the n in ones(1,n).
 
