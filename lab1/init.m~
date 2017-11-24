@@ -9,4 +9,4 @@ s_male = audioread('male08_16K.wav');
 % s_picc = audioread('piccolo.wav');
 [x,fs] = audioread('piccolo.wav');
 
-% Since 'specgram' is deprecated, 'spectrogram' is used instead, which is essentially the same.
+spectrogram(x); % Since 'specgram' is depre

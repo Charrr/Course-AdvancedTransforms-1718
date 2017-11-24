@@ -1,6 +1,12 @@
 function [  ] = complexity( size )
-%COMPLEXITY Summary of this function goes here
-%   Detailed explanation goes here
+%COMPLEXITY compares the complexity of DFT and FFT by plotting the comsumed time with respect to different sizes of ones(1,n) for both DFT and FFT on
+%the same graph.
+%   size is an array of the signal length, i.e., the n in ones(1,n).
+
+% Initialisation.
+len = length(size);
+dfttime = zeros(1,len);
+ffttime = zeros(1,len);
 
 % Calculate dft duration.
 for i=1:length(size)
@@ -21,6 +27,7 @@ hold on
 loglog(size, ffttime);
 legend('DFT','FFT');
 hold off
+xlabel('n');
+ylabel('consumed time');
 
 end
-
