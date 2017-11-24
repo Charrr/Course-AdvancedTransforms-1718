@@ -13,4 +13,3 @@ for n=0:N-1
     end
     sw(n+1) = temp;
 end
-
