@@ -8,3 +8,4 @@ for i=1:9
     subplot(3,3,i), 
     spectrogram(x, hanning(sizes(i)));
 end
+chi

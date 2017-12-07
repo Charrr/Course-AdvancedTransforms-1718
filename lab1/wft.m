@@ -9,7 +9,7 @@ if t-n/2 < 0    % In case the window reaches out the leftmost of the signal.
     s_windowed = s(1:floor(n/2+t)) .* han(floor(n/2-t+1):n);
     s_windowed = [s_windowed', zeros(1,floor(len-(t+n/2)))]';
 elseif t+n/2 > len  % In case the window reaches out the rightmost of the signal.
-    s_windowed = zeros(1,floor(t-n/2));
+    s_windowed = zeros(1,floor( t-n/2));
     s_windowed = [s_windowed, (s(floor(t-n/2):len) .* han(1:floor(len-t+n/2+1)))']';
 else            % Normal case.
     s_windowed = zeros(1,floor(t-n/2));
