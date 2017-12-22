@@ -35,3 +35,17 @@ subplot(2,2,2), plot(t, st_recovered);   title('Recovered');
 figure,
 ratedistortion(max(st));
 legend('steps=0','steps=1','steps=2','steps=3','steps=6','steps=15','steps=50');
+
+
+% 3.2
+im1 = dwt2_haar(im, 1);
+im2 = dwt2_haar(im, 2);
+im3 = dwt2_haar(im, 3);
+im4 = dwt2_haar(im, 4);
+im6 = dwt2_haar(im, 6);
+im_recovered1 = idwt2_haar(im2, 1);
+im_recovered2 = idwt2_haar(im2, 2);
+im_recovered3 = idwt2_haar(im3, 3);
+im_recovered4 = idwt2_haar(im4, 4);
+im_recovered6 = idwt2_haar(im6, 6);
+im_compressed50 = compress(im, 50);
