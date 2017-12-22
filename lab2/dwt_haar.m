@@ -5,7 +5,7 @@ function  dwtc = dwt_haar(c, steps)
 
 N = length(c)-1;	% Max index for filter: 0 .. N
 % If no steps to do, or the sequence is a single sample, the DWT is itself
-if (0==N | steps == 0)
+if (0==N || steps == 0)
    dwtc = c;
    return
 end
