@@ -3,4 +3,8 @@ function x = uncompress(y)
 % transformed signal values below threshold will be removed
 %
 % Use idwt_haar to re-synthesise the DC and AC components. 
-x = idwt_haar(y, 6);
+x = idwt_haar(y, 10);
+
+
+% %%%% Trial for FFT
+% x = ifft(y);

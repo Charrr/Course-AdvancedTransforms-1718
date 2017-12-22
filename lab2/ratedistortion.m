@@ -1,7 +1,7 @@
 function ratedistortion(maxthreshold)
 % Plot rate-distortion curve up to max threshold
 %
-nsteps = 20+1;	% Set the number of steps to plot
+nsteps = 80+1;	% Set the number of steps to plot
 
 step = maxthreshold/(nsteps-1);	% Size of each step
 
