@@ -9,9 +9,9 @@ function x = uncompress(y)
 % x = ifft(y);
 
 
-%%%% for 2D IDWT
-x = idwt2_haar(y, 10);
+% %%%% for 2D IDWT
+% x = idwt2_haar(y, 10);
 
 
-% %%%% for 2D IFFT
-% x = ifft2(y);
+%%%% for 2D IFFT
+x = ifft2(y);

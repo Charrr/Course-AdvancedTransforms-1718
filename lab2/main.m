@@ -37,6 +37,9 @@ ratedistortion(max(st));
 legend('steps=0','steps=1','steps=2','steps=3','steps=6','steps=15','steps=50');
 
 
+% 3
+im = imreadreal('lena.bmp');
+
 % 3.2
 im1 = dwt2_haar(im, 1);
 im2 = dwt2_haar(im, 2);
@@ -48,4 +51,28 @@ im_recovered2 = idwt2_haar(im2, 2);
 im_recovered3 = idwt2_haar(im3, 3);
 im_recovered4 = idwt2_haar(im4, 4);
 im_recovered6 = idwt2_haar(im6, 6);
-im_compressed50 = compress(im, 50);
+
+
+
+% 3.3 2D DWT
+thres = 50;
+im_compressed = compress(im, thres);
+im_decompressed = uncompress(im_compressed);
+subplot(1,2,1), imagesc(im);                title('Original');
+colormap gray; axis image;
+subplot(1,2,2), imagesc(im_decompressed);   title(strcat('DWT Compressed with threshold: ', num2str(thres)));
+colormap gray; axis image;
+
+% subplot(2,2,1), imagesc(im);                title('Original');
+% subplot(2,2,3), imagesc(dwt2_haar(im,10));  title('Orignial through DWT');
+% subplot(2,2,4), imagesc(im_compressed);     title('Compressed');
+% subplot(2,2,2), imagesc(im_decompressed);   title('De-compressed');
+
+% 3.3 2D FFT
+thres2 = 10000;
+im_compressed = compress(im, thres2);
+im_decompressed = uncompress(im_compressed);
+subplot(1,2,1), imagesc(im);                title('Original');
+colormap gray; axis image;
+subplot(1,2,2), imagesc(im_decompressed);   title(strcat('FFT Compressed with threshold: ', num2str(thres2)));
+colormap gray; axis image;

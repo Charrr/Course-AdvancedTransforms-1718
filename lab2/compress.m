@@ -4,11 +4,7 @@ function y = compress(x, threshold)
 %
 % Use dwt_haar to separate out the DC and AC components. 
 % fx = dwt_haar(x, 10);
-% 
 % y = fx .* (abs(fx)>=threshold);   % Keep only sufficiently large values of fx
-
-% Til here, some trivial values on the AC side have been thrown away, thus
-% achieving certain extent of compression.
 
 
 % %%%% for FFT
@@ -16,11 +12,11 @@ function y = compress(x, threshold)
 % y = fx .* (abs(fx)>=threshold);
 
 
-%%%% for 2D DWT
-fx = dwt2_haar(x, 10);
-y = fx .* (abs(fx)>=threshold);
-
-
-% %%%% for 2D FFT
-% fx = fft2(x);
+% %%%% for 2D DWT
+% fx = dwt2_haar(x, 10);
 % y = fx .* (abs(fx)>=threshold);
+
+
+%%%% for 2D FFT
+fx = fft2(x);
+y = fx .* (abs(fx)>=threshold);
